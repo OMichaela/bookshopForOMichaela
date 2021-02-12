@@ -3,6 +3,8 @@ package be.omichaela.bookshop.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+
 
 @Entity
 public class Purse {
@@ -11,6 +13,11 @@ public class Purse {
         private Long id;
         @Column(name = "PURSETYPE")
         private String type;
+
+        @NotBlank(message = "Price is mandatory")
+        @Column(price = "price")
+
+        private String price;
 
         public Purse() {
         }

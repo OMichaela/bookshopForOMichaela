@@ -3,25 +3,37 @@ package be.omichaela.bookshop.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 public class Incense {
 
     @Id
     private Long id;
-    @Column(name = "INCENSETYPE")
-    private String type;
+
+    @Column(name = "name")
+    private String name;
+
+    @Column(perfume = "perfume")
+    private String perfume;
+
+    @Column(reducedSmoke = "reducedSmoke")
+    private String reducedSmoke;
+
+    @NotBlank(message = "Price is mandatory")
+    @Column(price = "price")
+    private String price;
 
     public Incense() {
     }
 
-    public Incense(String type) {
-        this.type = type;
+    public Incense(String perfume) {
+        this.perfume = perfume;
     }
 
-    public Incense(Long id, String type) {
+    public Incense(Long id, String perfume) {
         this.id = id;
-        this.type = type;
+        this.perfume = perfume;
     }
 
     public Long getId() {
@@ -32,8 +44,26 @@ public class Incense {
         this.id = id;
     }
 
-    public String getType() {
-        return type;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getPerfume() {
+        return perfume;
+    }
+
+    public void setPerfume(String perfume) {
+        this.perfume = perfume;
+    }
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
     }
 
     @Override

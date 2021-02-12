@@ -3,6 +3,7 @@ package be.omichaela.bookshop.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 
 
     @Entity
@@ -10,19 +11,33 @@ import javax.persistence.Id;
 
         @Id
         private Long id;
-        @Column(name = "LIGHTHOLDERTYPE")
-        private String type;
+
+        @Column(name = "name")
+        private String name;
+
+        @Column(material = "material")
+        private String material;
+
+        @Column(color = "color")
+        private String color;
+
+        @Column(shape = "shape")
+        private String shape;
+
+        @NotBlank(message = "Price is mandatory")
+        @Column(price = "price")
+        private String price;
 
         public LightHolder() {
         }
 
-        public LightHolder(String type) {
-            this.type = type;
+        public LightHolder(String name) {
+            this.name = name;
         }
 
-        public LightHolder(Long id, String type) {
+        public LightHolder(Long id, String name) {
             this.id = id;
-            this.type = type;
+            this.name = name;
         }
 
         public Long getId() {
@@ -33,9 +48,48 @@ import javax.persistence.Id;
             this.id = id;
         }
 
-        public String getType() {
-            return type;
+        public String getName() {
+            return name;
         }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getMaterial() {
+            return material;
+        }
+
+        public void setMaterial(String material) {
+            this.material = material;
+        }
+
+        public String getColor() {
+            return color;
+        }
+
+        public void setColor(String color) {
+            this.color = color;
+        }
+
+
+        public String getShape() {
+            return shape;
+        }
+
+        public void setShape(String shape) {
+            this.shape = shape;
+        }
+
+
+        public String getPrice() {
+            return price;
+        }
+
+        public void setPrice(String price) {
+            this.price = price;
+        }
+
 
         @Override
         public String toString() {

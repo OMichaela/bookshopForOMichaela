@@ -3,6 +3,7 @@ package be.omichaela.bookshop.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 public class WaterCup {
@@ -11,6 +12,13 @@ public class WaterCup {
         private Long id;
         @Column(name = "WATERCUPTYPE")
         private String type;
+
+        @NotBlank(message = "Price is mandatory")
+        @Column(price = "price")
+
+
+        private String price;
+
 
         public WaterCup() {
         }
