@@ -14,26 +14,23 @@ public class Incense {
     @Column(name = "name")
     private String name;
 
-    @Column(perfume = "perfume")
+    @Column(name = "perfume")
     private String perfume;
 
-    @Column(reducedSmoke = "reducedSmoke")
+    @Column(name = "reducedSmoke")
     private String reducedSmoke;
 
     @NotBlank(message = "Price is mandatory")
-    @Column(price = "price")
-    private String price;
+    @Column(name = "price")
+    private double price;
 
-    public Incense() {
-    }
 
-    public Incense(String perfume) {
-        this.perfume = perfume;
-    }
-
-    public Incense(Long id, String perfume) {
+    public Incense(Long id, String name, String perfume, String reducedSmoke, Double price) {
         this.id = id;
+        this.name = name;
         this.perfume = perfume;
+        this.reducedSmoke= reducedSmoke;
+        this.price = price;
     }
 
     public Long getId() {
@@ -58,11 +55,11 @@ public class Incense {
     public void setPerfume(String perfume) {
         this.perfume = perfume;
     }
-    public String getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 

@@ -10,26 +10,24 @@ public class PerpetualCalendar {
 
         @Id
         private Long id;
-        @Column(name = "CALENDARTYPE")
-        private String type;
+        @Column(name = "name")
+        private String name;
 
         @NotBlank(message = "Price is mandatory")
-        @Column(price = "price")
+        @Column(name = "price")
+        private double price;
+
+        @NotBlank(message = "Language is mandatory")
+        @Column(name = "language")
+        private String language;
 
 
-        private String price;
 
-
-        public PerpetualCalendar() {
-        }
-
-        public PerpetualCalendar(String type) {
-            this.type = type;
-        }
-
-        public PerpetualCalendar(Long id, String type) {
+        public PerpetualCalendar(Long id, String name, double price, String language) {
             this.id = id;
-            this.type = type;
+            this.name = name;
+            this.price = price;
+            this.language = language;
         }
 
         public Long getId() {
@@ -43,6 +41,23 @@ public class PerpetualCalendar {
         public String getType() {
             return type;
         }
+
+        public String getLanguage() {
+        return language;
+        }
+
+        public void setLanguage(String language) {
+        this.language = language;
+    }
+
+
+        public double getPrice() {
+        return price;
+    }
+
+        public void setPrice(double price) {
+        this.price = price;
+    }
 
         @Override
         public String toString() {

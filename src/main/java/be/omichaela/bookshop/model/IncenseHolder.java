@@ -15,32 +15,31 @@ import javax.validation.constraints.NotBlank;
         @Column(name = "name")
         private String name;
 
-        @Column(material = "material")
+        @Column(name = "material")
         private String material;
 
-        @Column(color = "color")
+        @Column(name = "color")
         private String color;
 
-        @Column(size = "size")
+        @Column(name = "size")
         private String size;
 
-        @Column(shape = "shape")
+        @Column(name = "shape")
         private String shape;
 
         @NotBlank(message = "Price is mandatory")
-        @Column(price = "price")
-        private String price;
+        @Column(name = "price")
+        private double price;
 
-        public IncenseHolder() {
-        }
 
-        public IncenseHolder(String name) {
-            this.name = name;
-        }
-
-        public IncenseHolder(Long id, String name) {
+        public IncenseHolder(Long id, String name, String material, String color, String size, String shape, double price) {
             this.id = id;
             this.name = name;
+            this.material = material;
+            this.color = color;
+            this.size= size;
+            this.shape = shape;
+            this.price = price;
         }
 
         public Long getId() {
@@ -92,11 +91,11 @@ import javax.validation.constraints.NotBlank;
         }
 
 
-        public String getPrice() {
+        public double getPrice() {
             return price;
         }
 
-        public void setPrice(String price) {
+        public void setPrice(double price) {
             this.price = price;
         }
 

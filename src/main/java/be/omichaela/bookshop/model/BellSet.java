@@ -14,27 +14,24 @@ public class BellSet {
         @Column(name = "material")
         private String material;
 
-        @Column(size = "size")
+        @Column(name = "size")
         private String size;
 
-        @Column(color = "color")
+        @Column(name = "color")
         private String color;
 
         @NotBlank(message = "Price is mandatory")
-        @Column(price = "price")
-        private String price;
+        @Column(name = "price")
+        private double price;
 
 
-    public BellSet() {
-        }
-
-        public BellSet(String material) {
-            this.material = material;
-        }
 
         public BellSet(Long id, String material) {
             this.id = id;
             this.material = material;
+            this.size = size;
+            this.color = color;
+            this.price = price;
         }
 
         public Long getId() {
@@ -68,11 +65,11 @@ public class BellSet {
     public void setColor(String color) {
         this.color = color;
     }
-    public String getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(double price) {
         this.price = price;
     }
         @Override

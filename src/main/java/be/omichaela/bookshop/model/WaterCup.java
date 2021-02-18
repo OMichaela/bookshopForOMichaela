@@ -10,26 +10,27 @@ public class WaterCup {
 
         @Id
         private Long id;
-        @Column(name = "WATERCUPTYPE")
-        private String type;
+
+        @Column(name = "name")
+        private String name;
+
+        @Column(name = "material")
+        private String material;
+
+        @Column(name = "color")
+        private String color;
 
         @NotBlank(message = "Price is mandatory")
-        @Column(price = "price")
+        @Column(name = "price")
+        private double price;
 
 
-        private String price;
-
-
-        public WaterCup() {
-        }
-
-        public WaterCup(String type) {
-            this.type = type;
-        }
-
-        public WaterCup(Long id, String type) {
+        public WaterCup(Long id, String name, String material, String color, double price) {
             this.id = id;
-            this.type = type;
+            this.name = name;
+            this.material = material;
+            this.color = color;
+            this.price = price;
         }
 
         public Long getId() {
@@ -40,9 +41,37 @@ public class WaterCup {
             this.id = id;
         }
 
-        public String getType() {
-            return type;
+        public void setName(String name) {
+        this.name = name;
+    }
+
+        public String getName() {
+            return name;
         }
+
+        public double getPrice() {
+        return price;
+    }
+
+        public void setPrice(double price) {
+        this.price = price;
+    }
+
+        public String getColor() {
+        return color;
+    }
+
+        public void setColor(String color) {
+        this.color = color;
+    }
+
+        public String getMaterial() {
+        return material;
+    }
+
+        public void setMaterial(String material) {
+        this.material = material;
+    }
 
         @Override
         public String toString() {

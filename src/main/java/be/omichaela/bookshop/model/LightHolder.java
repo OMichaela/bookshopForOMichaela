@@ -15,29 +15,27 @@ import javax.validation.constraints.NotBlank;
         @Column(name = "name")
         private String name;
 
-        @Column(material = "material")
+        @Column(name = "material")
         private String material;
 
-        @Column(color = "color")
+        @Column(name = "color")
         private String color;
 
-        @Column(shape = "shape")
+        @Column(name = "shape")
         private String shape;
 
         @NotBlank(message = "Price is mandatory")
-        @Column(price = "price")
-        private String price;
+        @Column(name = "price")
+        private double price;
 
-        public LightHolder() {
-        }
 
-        public LightHolder(String name) {
-            this.name = name;
-        }
-
-        public LightHolder(Long id, String name) {
+        public LightHolder(Long id, String name, String material, String color, String shape, double price) {
             this.id = id;
             this.name = name;
+            this.material = material;
+            this.color = color;
+            this.shape = shape;
+            this.price = price;
         }
 
         public Long getId() {
@@ -82,11 +80,11 @@ import javax.validation.constraints.NotBlank;
         }
 
 
-        public String getPrice() {
+        public double getPrice() {
             return price;
         }
 
-        public void setPrice(String price) {
+        public void setPrice(double price) {
             this.price = price;
         }
 

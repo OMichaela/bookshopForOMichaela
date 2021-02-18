@@ -15,18 +15,18 @@ import javax.validation.constraints.NotBlank;
         @Column(name = "name")
         private String name;
 
-        @Column(material = "material")
+        @Column(name = "material")
         private String material;
 
-        @Column(color = "color")
+        @Column(name = "color")
         private String color;
 
-        @Column(size = "size")
+        @Column(name = "size")
         private String size;
 
         @NotBlank(message = "Price is mandatory")
-        @Column(price = "price")
-        private String price;
+        @Column(name = "price")
+        private double price;
 
         public LogoBottles() {
         }
@@ -35,9 +35,14 @@ import javax.validation.constraints.NotBlank;
             this.name = name;
         }
 
-        public LogoBottles(Long id, String name) {
+        public LogoBottles(Long id, String name, String material, String color, String size, double price) {
             this.id = id;
             this.name = name;
+            this.material = material;
+            this.color = color;
+            this.size = size;
+            this.price = price;
+
         }
 
         public Long getId() {
@@ -80,6 +85,14 @@ import javax.validation.constraints.NotBlank;
 
         public String getSize() {
             return size;
+        }
+
+        public double getPrice() {
+            return price;
+        }
+
+        public void setPrice(double price) {
+            this.price = price;
         }
 
         @Override

@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
+import java.sql.Date;
 
 
     @Entity
@@ -13,23 +14,23 @@ import javax.validation.constraints.NotBlank;
         private Long id;
 
         @NotBlank(message = "Title is mandatory")
-        @Column(title = "title")
+        @Column(name = "title")
         private String title;
 
         @NotBlank(message = "Language is mandatory")
-        @Column(language = "language")
+        @Column(name = "language")
         private String language;
 
         @NotBlank(message = "Date is mandatory")
-        @Column(date = "date")
-        private String date;
+        @Column(name = "editionDate")
+        private Date editionDate;
 
-        @Column(number = "number")
-        private String volumeNumber;
+        @Column(name = "number")
+        private String number;
 
         @NotBlank(message = "Price is mandatory")
-        @Column(price = "price")
-        private String price;
+        @Column(name = "price")
+        private double price;
 
 
         public Newspaper() {
@@ -39,9 +40,14 @@ import javax.validation.constraints.NotBlank;
             this.title = title;
         }
 
-        public Newspaper(Long id, String title) {
+        public Newspaper(Long id, String title, String language, Date editionDate, String number, double price) {
             this.id = id;
             this.title = title;
+            this.language = language;
+            this.editionDate = editionDate;
+            this.number = number;
+            this.price = price;
+
         }
 
         public Long getId() {
@@ -59,6 +65,7 @@ import javax.validation.constraints.NotBlank;
         public void setTitle(String title) {
             this.title = title;
         }
+
         public String getLanguage() {
             return language;
         }
@@ -66,12 +73,14 @@ import javax.validation.constraints.NotBlank;
         public void setLanguage(String language) {
             this.language = language;
         }
-        public String getDate() {
-            return date;
+
+
+        public Date getEditionDate() {
+            return editionDate;
         }
 
-        public void setDate(String date) {
-            this.date = date;
+        public void setEditionDate(Date editionDate) {
+            this.editionDate = editionDate;
         }
         }
         public String number() {
@@ -81,11 +90,12 @@ import javax.validation.constraints.NotBlank;
         public void setNumber(String number) {
             this.number = number;
         }
-        public String getPrice() {
+
+        public double getPrice() {
             return price;
         }
 
-        public void setPrice(String price) {
+        public void setPrice(double price) {
             this.price = price;
         }
 

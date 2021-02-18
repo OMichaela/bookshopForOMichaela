@@ -18,33 +18,39 @@ public class Book {
     private String title;
 
     @NotBlank(message = "Language is mandatory")
-    @Column(language = "language")
+    @Column(name = "language")
     private String language;
 
-    @Column(author = "author")
+    @Column(name = "author")
     private String author;
 
-    @Column(volumeNumber = "volumeNumber")
+    @Column(name = "publisher")
+    private String publisher;
+
+    @Column(name = "volumeNumber")
     private String volumeNumber;
 
     @NotBlank(message = "Price is mandatory")
-    @Column(price = "price")
-    private String price;
+    @Column(name = "price")
+    private double price;
 
     @NotBlank(message = "ISBN is mandatory")
-    @Column(isbn = "ISBN")
-    private long isbn;
+    @Column(name = "ISBN")
+    private String isbn;
 
-    public Book() {
-    }
 
-    public Book(String title) {
-        this.title = title;
-    }
 
-    public Book(Long id, String title) {
+    public Book(Long id, String title, String language, String author, String publisher, String volumeNumber, double price, String isbn) {
+
+        super();
         this.id = id;
         this.title = title;
+        this.language = language;
+        this.author = author;
+        this.publisher = publisher;
+        this.volumeNumber = volumeNumber;
+        this.price = price;
+        this.isbn= isbn;
     }
 
     public Long getId() {
@@ -62,6 +68,7 @@ public class Book {
     public void setTitle(String title) {
         this.title = title;
     }
+
     public String getLanguage() {
         return language;
     }
@@ -69,6 +76,7 @@ public class Book {
     public void setLanguage(String language) {
         this.language = language;
     }
+
     public String getAuthor() {
         return author;
     }
@@ -76,6 +84,15 @@ public class Book {
     public void setAuthor(String author) {
         this.author = author;
     }
+
+    public String getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+
     public String getVolumeNumber() {
         return volumeNumber;
     }
@@ -83,20 +100,25 @@ public class Book {
     public void setVolumeNumber(String volumeNumber) {
         this.volumeNumber = volumeNumber;
     }
-    public String getPrice() {
+
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(double price) {
         this.price = price;
     }
-    public Long getIsbn() {
+
+    public String getIsbn() {
         return isbn;
     }
 
-    public void setIsbn(long isbn) {
+    public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
+
+
+
     @Override
     public String toString() {
         return "this is a book object  with title: " + title;
