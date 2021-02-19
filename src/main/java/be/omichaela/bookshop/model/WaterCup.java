@@ -26,6 +26,7 @@ public class WaterCup {
 
 
         public WaterCup(Long id, String name, String material, String color, double price) {
+            super();
             this.id = id;
             this.name = name;
             this.material = material;

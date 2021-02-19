@@ -9,4 +9,21 @@ import java.util.List;
 
 @Service
 public class BeadsService {
+
+    private BeadsRepository beadsRepository;
+
+    @Autowired
+    public BeadsService(BeadsRepository beadsRepository) {
+        this.beadsRepository = beadsRepository;
+    }
+
+    public List<Beads> getAllBeads(){
+        return beadsRepository.findAll();
+    }
+
+    public Book getBeadsById(long id){
+
+        return beadsRepository.findById(id).get();
+
+    }
 }

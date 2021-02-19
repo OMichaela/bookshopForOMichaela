@@ -9,4 +9,21 @@ import java.util.List;
 
 @Service
 public class WaterCupService {
+
+    private WaterCupRepository waterCupRepository;
+
+    @Autowired
+    public WaterCupService(WaterCupRepository waterCupRepository) {
+        this.waterCupRepository = waterCupRepository;
+    }
+
+    public List<WaterCup> getAllWaterCups(){
+        return waterCupRepository.findAll();
+    }
+
+    public WaterCup getWaterCupById(long id){
+
+        return waterCupRepository.findById(id).get();
+
+    }
 }
