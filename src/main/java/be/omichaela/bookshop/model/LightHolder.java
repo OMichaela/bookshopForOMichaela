@@ -19,17 +19,17 @@ import javax.validation.constraints.NotBlank;
         private String material;
 
         @Column(name = "color")
-        private String color;
+        private Color color;
 
         @Column(name = "shape")
         private String shape;
 
-        @NotBlank(message = "Price is mandatory")
+        @NotEmpty(message = "Price is mandatory")
         @Column(name = "price")
         private double price;
 
 
-        public LightHolder(Long id, String name, String material, String color, String shape, double price) {
+        public LightHolder(Long id, String name, String material, Color color, String shape, double price) {
             this.id = id;
             this.name = name;
             this.material = material;
@@ -66,7 +66,7 @@ import javax.validation.constraints.NotBlank;
             return color;
         }
 
-        public void setColor(String color) {
+        public void setColor(Color color) {
             this.color = color;
         }
 

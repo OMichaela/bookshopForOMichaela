@@ -11,6 +11,7 @@ public class BellSet {
 
         @Id
         private Long id;
+
         @Column(name = "material")
         private String material;
 

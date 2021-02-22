@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.validation.constraints.NotBlank;
+
 
 @Entity
 public class Book {
@@ -13,11 +13,11 @@ public class Book {
     @Id
     private Long id;
 
-    @NotBlank(message = "Title is mandatory")
+    @NotEmpty(message = "Title is mandatory")
     @Column(name = "title")
     private String title;
 
-    @NotBlank(message = "Language is mandatory")
+    @NotEmpty(message = "Language is mandatory")
     @Column(name = "language")
     private String language;
 
@@ -30,17 +30,23 @@ public class Book {
     @Column(name = "volumeNumber")
     private String volumeNumber;
 
-    @NotBlank(message = "Price is mandatory")
+    @Column(name ="numberOfPages")
+    private int numberOfPages;
+
+    @NotEmpty(message = "Price is mandatory")
     @Column(name = "price")
     private double price;
 
-    @NotBlank(message = "ISBN is mandatory")
+    @NotEmpty(message = "ISBN is mandatory")
     @Column(name = "ISBN")
     private String isbn;
 
 
+    public Book(){
 
-    public Book(Long id, String title, String language, String author, String publisher, String volumeNumber, double price, String isbn) {
+    }
+
+    public Book(Long id, String title, String language, String author, String publisher, String volumeNumber, int numberOfPages, double price, String isbn) {
 
         super();
         this.id = id;
@@ -49,6 +55,7 @@ public class Book {
         this.author = author;
         this.publisher = publisher;
         this.volumeNumber = volumeNumber;
+        this.numberOfPages = numberOfPages;
         this.price = price;
         this.isbn= isbn;
     }
@@ -101,6 +108,14 @@ public class Book {
         this.volumeNumber = volumeNumber;
     }
 
+    public String getNumberOfPages() {
+        return numberOfPages;
+    }
+
+    public void setNumberOfPages(String numberOfPages) {
+        this.numberOfPages = numberOfPages;
+    }
+
     public double getPrice() {
         return price;
     }
@@ -118,10 +133,8 @@ public class Book {
     }
 
 
-
     @Override
     public String toString() {
-        return "this is a book object  with title: " + title;
+        return "Book: id: " + id + " title: \"" + title +"\"\n language: " + language + "\n author: " + author + "\n publisher: " + publisher + "\n volumeNumber: "  + volumeNumber +"\n numberOfPages: " + numberOfPages + "\n price: " + price + "\n isbn: " + isbn;
     }
 }
-

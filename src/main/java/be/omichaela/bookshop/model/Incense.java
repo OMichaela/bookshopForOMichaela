@@ -3,7 +3,7 @@ package be.omichaela.bookshop.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Incense {
@@ -18,14 +18,14 @@ public class Incense {
     private String perfume;
 
     @Column(name = "reducedSmoke")
-    private String reducedSmoke;
+    private boolean reducedSmoke;
 
-    @NotBlank(message = "Price is mandatory")
+    @NotEmpty(message = "Price is mandatory")
     @Column(name = "price")
     private double price;
 
 
-    public Incense(Long id, String name, String perfume, String reducedSmoke, Double price) {
+    public Incense(long id, String name, String perfume, boolean reducedSmoke, double price) {
         this.id = id;
         this.name = name;
         this.perfume = perfume;
@@ -55,6 +55,15 @@ public class Incense {
     public void setPerfume(String perfume) {
         this.perfume = perfume;
     }
+
+    public double getReducedSmoke() {
+        return IsReducedSmoke;
+    }
+
+    public void setReducedSmoke(boolean reducedSmoke) {
+        this.reducedSmoke = reducedSmoke;
+    }
+
     public double getPrice() {
         return price;
     }

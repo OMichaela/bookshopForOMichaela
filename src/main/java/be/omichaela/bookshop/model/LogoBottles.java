@@ -24,15 +24,13 @@ import javax.validation.constraints.NotBlank;
         @Column(name = "size")
         private String size;
 
-        @NotBlank(message = "Price is mandatory")
+        @NotEmpty(message = "Price is mandatory")
         @Column(name = "price")
         private double price;
 
-        public LogoBottles() {
-        }
 
-        public LogoBottles(String name) {
-            this.name = name;
+
+        public LogoBottles() {
         }
 
         public LogoBottles(Long id, String name, String material, String color, String size, double price) {
