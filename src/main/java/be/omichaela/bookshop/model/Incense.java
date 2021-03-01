@@ -15,7 +15,7 @@ public class Incense {
     private String name;
 
     @Column(name = "perfume")
-    private String perfume;
+    private Perfume perfume;
 
     @Column(name = "reducedSmoke")
     private boolean reducedSmoke;
@@ -25,7 +25,7 @@ public class Incense {
     private double price;
 
 
-    public Incense(long id, String name, String perfume, boolean reducedSmoke, double price) {
+    public Incense(long id, String name, Perfume perfume, boolean reducedSmoke, double price) {
         this.id = id;
         this.name = name;
         this.perfume = perfume;
@@ -48,11 +48,12 @@ public class Incense {
     public void setName(String name) {
         this.name = name;
     }
-    public String getPerfume() {
+
+    public Perfume getPerfume() {
         return perfume;
     }
 
-    public void setPerfume(String perfume) {
+    public void setPerfume(Perfume perfume) {
         this.perfume = perfume;
     }
 

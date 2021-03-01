@@ -16,13 +16,13 @@ import javax.validation.constraints.NotBlank;
         private String name;
 
         @Column(name = "material")
-        private String material;
+        private Material material;
 
         @Column(name = "color")
-        private String color;
+        private Color color;
 
         @Column(name = "size")
-        private String size;
+        private Size size;
 
         @NotEmpty(message = "Price is mandatory")
         @Column(name = "price")
@@ -33,7 +33,7 @@ import javax.validation.constraints.NotBlank;
         public LogoBottles() {
         }
 
-        public LogoBottles(Long id, String name, String material, String color, String size, double price) {
+        public LogoBottles(Long id, String name, Material material, Color color, Size size, double price) {
             this.id = id;
             this.name = name;
             this.material = material;
@@ -51,7 +51,6 @@ import javax.validation.constraints.NotBlank;
             this.id = id;
         }
 
-
         public String getName() {
             return name;
         }
@@ -60,28 +59,27 @@ import javax.validation.constraints.NotBlank;
             this.name = name;
         }
 
-        public String getMaterial() {
+        public Material getMaterial() {
             return material;
         }
 
-        public void setMaterial(String material) {
+        public void setMaterial(Material material) {
             this.material = material;
         }
 
-        public String getColor() {
+        public Color getColor() {
             return color;
         }
 
-        public void setColor(String color) {
+        public void setColor(Color color) {
             this.color = color;
         }
-
 
         public void setSize(String size) {
             this.size = size;
         }
 
-        public String getSize() {
+        public Size getSize() {
             return size;
         }
 

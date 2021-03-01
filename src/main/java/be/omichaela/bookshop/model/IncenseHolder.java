@@ -16,13 +16,13 @@ import javax.validation.constraints.NotBlank;
         private String name;
 
         @Column(name = "material")
-        private String material;
+        private Material material;
 
         @Column(name = "color")
-        private String color;
+        private Color color;
 
         @Column(name = "size")
-        private String size;
+        private Size size;
 
         @Column(name = "shape")
         private String shape;

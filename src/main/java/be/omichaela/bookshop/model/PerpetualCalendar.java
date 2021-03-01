@@ -19,11 +19,11 @@ public class PerpetualCalendar {
 
         @NotBlank(message = "Language is mandatory")
         @Column(name = "language")
-        private String language;
+        private Language language;
 
 
 
-        public PerpetualCalendar(Long id, String name, double price, String language) {
+        public PerpetualCalendar(Long id, String name, double price, Language language) {
             this.id = id;
             this.name = name;
             this.price = price;
@@ -42,11 +42,11 @@ public class PerpetualCalendar {
             return type;
         }
 
-        public String getLanguage() {
+        public Language getLanguage() {
         return language;
         }
 
-        public void setLanguage(String language) {
+        public void setLanguage(Language language) {
         this.language = language;
     }
 

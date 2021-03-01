@@ -19,7 +19,7 @@ public class Book {
 
     @NotEmpty(message = "Language is mandatory")
     @Column(name = "language")
-    private String language;
+    private Language language;
 
     @Column(name = "author")
     private String author;
@@ -46,7 +46,7 @@ public class Book {
 
     }
 
-    public Book(Long id, String title, String language, String author, String publisher, String volumeNumber, int numberOfPages, double price, String isbn) {
+    public Book(Long id, String title, Language language, String author, String publisher, String volumeNumber, int numberOfPages, double price, String isbn) {
 
         super();
         this.id = id;
@@ -76,11 +76,11 @@ public class Book {
         this.title = title;
     }
 
-    public String getLanguage() {
+    public Language getLanguage() {
         return language;
     }
 
-    public void setLanguage(String language) {
+    public void setLanguage(Language language) {
         this.language = language;
     }
 

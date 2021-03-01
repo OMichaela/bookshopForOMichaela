@@ -16,20 +16,20 @@ public class Purse {
         private String name;
 
         @Column(name = "color")
-         private String color;
+         private Color color;
 
         @Column(name = "material")
-        private String material;
+        private Material material;
 
         @Column(name = "size")
-        private String size;
+        private Size size;
 
         @NotBlank(message = "Price is mandatory")
         @Column(name = "price")
         private double price;
 
 
-        public Purse(Long id, String name, String color, String material, String size, double price) {
+        public Purse(Long id, String name, Color color, Material material, Size size, double price) {
             this.id = id;
             this.name = name;
             this.color = color;
@@ -54,27 +54,27 @@ public class Purse {
             return name;
         }
 
-        public String getColor() {
+        public Color getColor() {
         return color;
     }
 
-        public void setColor(String color) {
+        public void setColor(Color color) {
         this.color = color;
     }
 
-        public String getMaterial() {
+        public Material getMaterial() {
         return material;
     }
 
-        public void setMaterial(String material) {
+        public void setMaterial(Material material) {
         this.material = material;
     }
 
-        public void setSize(String size) {
+        public void setSize(Size size) {
         this.size = size;
     }
 
-        public String getSize() {
+        public Size getSize() {
         return size;
     }
 

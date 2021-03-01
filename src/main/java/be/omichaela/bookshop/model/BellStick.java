@@ -13,20 +13,20 @@ import javax.validation.constraints.NotBlank;
         private Long id;
 
         @Column(name = "material")
-        private String material;
+        private Material material;
 
         @Column(name = "size")
-        private String size;
+        private Size size;
 
         @Column(name = "color")
-        private String color;
+        private Color color;
 
         @NotBlank(message = "Price is mandatory")
         @Column(name = "price")
         private double price;
 
 
-        public BellStick(Long id, String material, String size, String color, double price) {
+        public BellStick(Long id, Material material, Size size, Color color, double price) {
             this.id = id;
             this.material = material;
             this.size = size;
@@ -42,27 +42,30 @@ import javax.validation.constraints.NotBlank;
             this.id = id;
         }
 
-        public String getMaterial() {
+        public Material getMaterial() {
             return material;
         }
 
-        public void setMaterial(String material) {
+        public void setMaterial(Material material) {
             this.material = material;
         }
-        public void setSize(String size) {
+
+        public void setSize(Size size) {
             this.size = size;
         }
-        public String getSize() {
+
+        public Size getSize() {
             return size;
         }
 
-        public String getColor() {
+        public Color getColor() {
             return color;
         }
 
-        public void setColor(String color) {
+        public void setColor(Color color) {
             this.color = color;
         }
+
         public double getPrice() {
             return price;
         }

@@ -15,17 +15,17 @@ public class WaterCup {
         private String name;
 
         @Column(name = "material")
-        private String material;
+        private Material material;
 
         @Column(name = "color")
-        private String color;
+        private Color color;
 
         @NotBlank(message = "Price is mandatory")
         @Column(name = "price")
         private double price;
 
 
-        public WaterCup(Long id, String name, String material, String color, double price) {
+        public WaterCup(Long id, String name, Material material, Color color, double price) {
             super();
             this.id = id;
             this.name = name;
@@ -58,19 +58,19 @@ public class WaterCup {
         this.price = price;
     }
 
-        public String getColor() {
+        public Color getColor() {
         return color;
     }
 
-        public void setColor(String color) {
+        public void setColor(Color color) {
         this.color = color;
     }
 
-        public String getMaterial() {
+        public Material getMaterial() {
         return material;
     }
 
-        public void setMaterial(String material) {
+        public void setMaterial(Material material) {
         this.material = material;
     }
 

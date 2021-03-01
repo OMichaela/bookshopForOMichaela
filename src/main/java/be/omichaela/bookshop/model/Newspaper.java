@@ -19,7 +19,7 @@ import java.sql.Date;
 
         @NotBlank(message = "Language is mandatory")
         @Column(name = "language")
-        private String language;
+        private Language language;
 
         @NotBlank(message = "Date is mandatory")
         @Column(name = "editionDate")
@@ -40,7 +40,7 @@ import java.sql.Date;
             this.title = title;
         }
 
-        public Newspaper(Long id, String title, String language, Date editionDate, String number, double price) {
+        public Newspaper(Long id, String title, Language language, Date editionDate, String number, double price) {
             this.id = id;
             this.title = title;
             this.language = language;
@@ -66,14 +66,13 @@ import java.sql.Date;
             this.title = title;
         }
 
-        public String getLanguage() {
+        public Language getLanguage() {
             return language;
         }
 
-        public void setLanguage(String language) {
+        public void setLanguage(Language language) {
             this.language = language;
         }
-
 
         public Date getEditionDate() {
             return editionDate;
