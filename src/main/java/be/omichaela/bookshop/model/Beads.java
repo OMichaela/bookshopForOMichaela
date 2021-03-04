@@ -28,10 +28,12 @@ public class Beads {
     public Beads(Long id, Material material, Size size, Color color, double price) {
         this.id = id;
         this.material = material;
+
         this.size = size;
         this.color = color;
         this.price = price;
     }
+
 
     public Long getId() {
         return id;
@@ -75,6 +77,27 @@ public class Beads {
 
 
 
+    class PrintSize {
+        Sizes coffeeSize;
+
+        public PrintSize(Sizes coffeeSize) {
+            this.coffeeSize = coffeeSize;
+        }
+
+        public void placeOrder() {
+            switch(coffeeSize) {
+                case SMALL:
+                    System.out.println("This coffee should be small.");
+                    break;
+                case REGULAR:
+                    System.out.println("This coffee should be REGULAR.");
+                    break;
+                case LARGE:
+                    System.out.println("This coffee should be large.");
+                    break;
+            }
+        }
+    }
 
 
     @Override
