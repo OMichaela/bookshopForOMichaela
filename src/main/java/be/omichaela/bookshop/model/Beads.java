@@ -60,6 +60,7 @@ public class Beads {
     }
 
     public Color getColor() {
+
         return color;
     }
 
