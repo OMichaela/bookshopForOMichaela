@@ -1,135 +1,130 @@
 package be.omichaela.bookshop.model;
 
 public enum Color
+
 {
 
     AQUA {
         @Override
         public String printColor() {
-            String message = "Aqua is the color";
+            String message = "The color is aqua";
             return message;
         }},
 
     BLUE {
         @Override
         public String printColor() {
-            String message = "Blue is the color";
+            String message = "The color is blue";
             return message;
         }},
 
     BROWN {
         @Override
         public String printColor() {
-            String message = "Brown is the color";
+            String message = "The color is brown";
             return message;
         }},
 
     DARK_BLUE {
         @Override
         public String printColor() {
-            String message = "Dark blue is the color";
+            String message = "The color is dark blue";
             return message;
         }},
 
     FUCHSIA {
         @Override
         public String printColor() {
-            String message = "Fuschia is the color";
+            String message = "The color is fuchsia";
             return message;
         }},
 
     GREY {
         @Override
         public String printColor() {
-            String message = "Grey is the color";
+            String message = "The color is grey";
             return message;
         }},
 
     IVORY {
         @Override
         public String printColor() {
-            String message = "Ivory is the color";
+            String message = "The color is ivory";
             return message;
         }},
 
     JADE {
         @Override
         public String printColor() {
-            String message = "Jade is the color";
+            String message = "The color is jade";
             return message;
         }},
 
     MAGENTA {
         @Override
         public String printColor() {
-            String message = "Magenta is the color";
+            String message = "The color is magenta";
             return message;
         }},
 
     MALACHITE {
         @Override
         public String printColor() {
-            String message = "Malachite is the color";
+            String message = "The color is malachite";
             return message;
         }},
 
     PINK {
         @Override
         public String printColor() {
-            String message = "Pink is the color";
+            String message = "The color is pink";
             return message;
         }},
-
-    WHITE {
-    @Override
-    public String printColor() {
-        String message = "White is the color";
-        return message;
-    }},
-
-
-
-
 
 
     RED  {
         @Override
         public String printColor() {
-            String message = "Red is the color";
+            String message = "The color is red";
+            return message;
+        }},
+
+    PLUM {
+        @Override
+        public String printColor() {
+            String message = "The color is plum";
             return message;
         }},
 
     PURPLE {
         @Override
         public String printColor() {
-             String message = "Purple is the color";
+             String message = "The color is purple";
              return message;
                 }},
 
-
-
-
+    WHITE {
+        @Override
+        public String printColor() {
+            String message = "The color is white";
+            return message;
+        }},
 
     YELLOW {
         @Override
         public String printColor() {
-            String message = "Yellow is the color";
+            String message = "The color is yellow";
             return message;
-        }},
+        }};
 
 
+    private Color (Color color) {
+        this.color = color;
 
-    PLUM {
-        @Override
-        public String printColor() {
-            String message = "Plum is the color";
-            return message;
-        }},
-
-   ;
+    };
 
 
-public Color[] getColor() {
+    public Color[] getColor() {
 
         Color[] colors = Color.values();
 

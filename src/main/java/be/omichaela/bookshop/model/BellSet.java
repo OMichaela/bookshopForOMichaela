@@ -18,20 +18,16 @@ public class BellSet {
         @Column(name = "size")
         private Size size;
 
-        @Column(name = "color")
-        private Color color;
-
         @NotBlank(message = "Price is mandatory")
         @Column(name = "price")
         private double price;
 
 
 
-        public BellSet(Long id, Material material, Size size, Color color, double price) {
+        public BellSet(Long id, Material material, Size size, double price) {
             this.id = id;
             this.material = material;
             this.size = size;
-            this.color = color;
             this.price = price;
         }
 
@@ -59,13 +55,6 @@ public class BellSet {
         return size;
     }
 
-        public Color getColor() {
-        return color;
-    }
-
-        public void setColor(Color color) {
-        this.color = color;
-    }
 
         public double getPrice() {
         return price;

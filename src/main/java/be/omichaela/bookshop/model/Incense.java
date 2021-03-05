@@ -18,18 +18,18 @@ public class Incense {
     private Perfume perfume;
 
     @Column(name = "reducedSmoke")
-    private boolean reducedSmoke;
+    private boolean isReducedSmoke;
 
     @NotEmpty(message = "Price is mandatory")
     @Column(name = "price")
     private double price;
 
 
-    public Incense(long id, String name, Perfume perfume, boolean reducedSmoke, double price) {
+    public Incense(long id, String name, Perfume perfume, boolean isReducedSmoke, double price) {
         this.id = id;
         this.name = name;
         this.perfume = perfume;
-        this.reducedSmoke= reducedSmoke;
+        this.isReducedSmoke= isReducedSmoke;
         this.price = price;
     }
 
@@ -57,12 +57,12 @@ public class Incense {
         this.perfume = perfume;
     }
 
-    public double getReducedSmoke() {
-        return IsReducedSmoke;
+    public double getisReducedSmoke() {
+        return isReducedSmoke;
     }
 
-    public void setReducedSmoke(boolean reducedSmoke) {
-        this.reducedSmoke = reducedSmoke;
+    public void setisReducedSmoke(boolean isReducedSmoke) {
+        this.isReducedSmoke = isReducedSmoke;
     }
 
     public double getPrice() {
